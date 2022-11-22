@@ -40,8 +40,6 @@ createBtn.addEventListener('click', () => {
   createBoxes(inputEl);
 });
 
-// createBtn.addEventListener("click", createBoxes(5));
-
 const destroyBoxes = () => {
   destroyBtn.addEventListener('click', () => {
     boxesRef.innerHTML = '';
