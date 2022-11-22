@@ -8,36 +8,36 @@ const destroyBtn = document.querySelector('button[data-destroy]');
 console.log(destroyBtn);
 const boxesRef = document.querySelector('div#boxes');
 
-// const createBoxes = (amount) => {
-//   for (let i = 0; i < amount - 1; i += 1) {
-//     const newEL = document.createElement("div");
-//     newEL.style.width = `${30 + i * 10}px`;
-//     newEL.style.height = `${30 + i * 10}px`;
-//     newEL.style.backgroundColor = getRandomHexColor();
-//     console.log(newEL);
-//     boxesRef.append(newEL);
-//     console.log(boxesRef);
-//   }
-// };
-
-const createBoxes = () => {
-  createBtn.addEventListener('click', () => {
-    const arrayEl = [];
-    let inputEL = document.querySelector('#controls input').valueAsNumber;
-    console.log(inputEL);
-    for (let i = 0; i < inputEL; i += 1) {
-      let newEL = `<div style="width: ${30 + i * 10}px; height: ${
-        30 + i * 10
-      }px ; background-color: ${getRandomHexColor()}"></div>`;
-      arrayEl.push(newEL);
-      console.log(arrayEl);
-    }
-    const arrayString = arrayEl.join('');
-    return boxesRef.insertAdjacentHTML('afterbegin', arrayString);
-  });
+// Solution #1
+const createBoxes = amount => {
+  for (let i = 0; i < amount; i += 1) {
+    const newEL = document.createElement('div');
+    newEL.style.width = `${30 + i * 10}px`;
+    newEL.style.height = `${30 + i * 10}px`;
+    newEL.style.backgroundColor = getRandomHexColor();
+    boxesRef.append(newEL);
+  }
 };
 
-createBoxes();
+// Solution #2
+// const createBoxes = amount => {
+//   const arrayEl = [];
+
+//   for (let i = 0; i < amount; i += 1) {
+//     let newEL = `<div style="width: ${30 + i * 10}px; height: ${
+//       30 + i * 10
+//     }px ; background-color: ${getRandomHexColor()}"></div>`;
+//     arrayEl.push(newEL);
+//   }
+
+//   const arrayString = arrayEl.join('');
+//   return boxesRef.insertAdjacentHTML('afterbegin', arrayString);
+// };
+
+createBtn.addEventListener('click', () => {
+  const inputEl = document.querySelector('#controls input').valueAsNumber;
+  createBoxes(inputEl);
+});
 
 // createBtn.addEventListener("click", createBoxes(5));
 
