@@ -3,9 +3,7 @@ function getRandomHexColor() {
 }
 
 const createBtn = document.querySelector('button[data-create]');
-console.log(createBtn);
 const destroyBtn = document.querySelector('button[data-destroy]');
-console.log(destroyBtn);
 const boxesRef = document.querySelector('div#boxes');
 
 // Solution #1
