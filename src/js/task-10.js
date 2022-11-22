@@ -15,6 +15,7 @@ const createBoxes = amount => {
     newEL.style.width = `${30 + i * 10}px`;
     newEL.style.height = `${30 + i * 10}px`;
     newEL.style.backgroundColor = getRandomHexColor();
+    newEL.classList.add('box-style');
     boxesRef.append(newEL);
   }
 };
