@@ -1,12 +1,13 @@
-const formRef = document.querySelector("form.login-form");
+const formRef = document.querySelector('form.login-form');
 
-formRef.addEventListener("submit", (event) => {
+formRef.addEventListener('submit', event => {
   event.preventDefault();
   if (
-    event.currentTarget.elements.email.value === "" ||
-    event.currentTarget.elements.password.value === ""
+    event.currentTarget.elements.email.value === '' ||
+    event.currentTarget.elements.password.value === ''
   ) {
-    alert("Для відправки форми мають бути заповнені всі поля!!!");
+    alert('Для відправки форми мають бути заповнені всі поля!!!');
+    return;
   }
   const userLoginData = {
     email: event.currentTarget.elements.email.value,

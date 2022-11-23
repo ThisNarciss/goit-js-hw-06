@@ -1,7 +1,4 @@
 const categoriesList = document.querySelector("ul#categories");
-// const listEl = categoriesList.children;
-// console.log("Number of categories:", listEl.length);
-
 const listEl = categoriesList.querySelectorAll("li.item");
 console.log("Number of categories:", listEl.length);
 

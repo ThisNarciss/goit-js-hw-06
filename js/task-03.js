@@ -21,6 +21,5 @@ const imgTextTag = images
       `<li class="gallery__item"><img src="${image.url}" alt="${image.alt}" class="gallery__images" width=500></li>`
   )
   .join("");
-console.log(imgTextTag);
 
 const galleryImg = galleryList.insertAdjacentHTML("afterbegin", imgTextTag);

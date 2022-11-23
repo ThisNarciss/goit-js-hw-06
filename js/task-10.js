@@ -8,14 +8,16 @@ const boxesRef = document.querySelector('div#boxes');
 
 // Solution #1
 const createBoxes = amount => {
+  const fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i += 1) {
     const newEL = document.createElement('div');
     newEL.style.width = `${30 + i * 10}px`;
     newEL.style.height = `${30 + i * 10}px`;
     newEL.style.backgroundColor = getRandomHexColor();
     newEL.classList.add('box-style');
-    boxesRef.append(newEL);
+    fragment.append(newEL);
   }
+  boxesRef.append(fragment);
 };
 
 // Solution #2
@@ -34,8 +36,9 @@ const createBoxes = amount => {
 // };
 
 createBtn.addEventListener('click', () => {
-  const inputEl = document.querySelector('#controls input').valueAsNumber;
-  createBoxes(inputEl);
+  const inputEl = document.querySelector('#controls input');
+  console.dir(inputEl);
+  createBoxes(inputEl.valueAsNumber);
 });
 
 const destroyBoxes = () => {
